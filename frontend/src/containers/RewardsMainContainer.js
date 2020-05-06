@@ -34,7 +34,7 @@ const RewardsMainContainer = () => {
             {/* Not working!  */}
             {rewards.forEach(r => console.log(r))}
 
-            {results.length > 0? results.map(reward => (
+            {results.length > 0 ? results.map(reward => (
             <RewardCard reward={reward}/>
             )) : null } 
         </div>
