@@ -53,7 +53,7 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
 
         if user && user.authenticate(params[:password])
-            render json: {username: user.username, role: user.role, token: encode_token({user_id: user.id})}
+            render json: {username: user.username, role: user.role, familyId: user.family_id, token: encode_token({user_id: user.id})}
         else
             render json: {error: "invalid username or password"}
         end

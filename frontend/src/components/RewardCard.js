@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const RewardCard = (props) => {
 
-
+    console.log(props)
     return(
         <div>
             <h4>{props.reward.name}</h4>
