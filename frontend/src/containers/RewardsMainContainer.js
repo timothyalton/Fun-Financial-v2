@@ -19,19 +19,24 @@ const RewardsMainContainer = () => {
     })
     .then(resp => resp.json())
     .then(rewards => {
+        // console.log(rewards)
         setRewards(rewards)
     })
     };
      
-    showRewards()
+    useEffect(() => showRewards(), [])
+
+    const results = rewards.length > 0 ? rewards.filter(reward => reward.family_id == localStorage.familyId) : []
 
     return(
         <div>
             <NavBar />
-            {rewards.map(reward => <RewardCard reward={reward}/>)}
-            <div>
+            {/* Not working!  */}
+            {rewards.forEach(r => console.log(r))}
 
-            </div>
+            {results.length > 0? results.map(reward => (
+            <RewardCard reward={reward}/>
+            )) : null } 
         </div>
     )
 }

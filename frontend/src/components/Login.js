@@ -48,6 +48,7 @@ const Login = (props)=> {
             }
             localStorage.token = user.token
             localStorage.role = user.role
+            localStorage.familyId = user.familyId
         })
     }
 
