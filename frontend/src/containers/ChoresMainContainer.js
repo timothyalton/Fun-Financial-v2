@@ -9,7 +9,7 @@ const ChoresMainContainer = () => {
     
     const [chores, setChores] = useState([])
 
-    
+    // shows chores
     const showChores = () => {
     fetch('http://localhost:3000/chores', {
       method: "GET",
