@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: fun_financial_development
+  pool: 5
+  timeout: 5000  
+
+test:
+  adapter: postgresql
+  database: fun_financial_test
+  pool: 5
+  timeout: 5000  
