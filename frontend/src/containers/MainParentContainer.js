@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import ProfileContainer from './ProfileContainer'
 import RewardsContainer from './RewardsContainer'
+import ChoresContainer from './ChoresContainer'
 
 
 const MainParentContainer = () => {
@@ -13,6 +14,7 @@ const MainParentContainer = () => {
         <div>
             <ProfileContainer />
             <RewardsContainer />
+            <ChoresContainer />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from '../components/NavBar'
 import { NavLink } from 'react-router-dom'
 
-import ChoreCard from '../components/ChoreCard'
+import ChoreCardLimited from '../components/ChoreCardLimited'
 
 
 const ChoresMainContainer = () => {
@@ -35,7 +35,7 @@ const ChoresMainContainer = () => {
             {/* {chores.forEach(c => console.log(c))} */}
 
             {results.length > 0 ? results.map(chore => (
-            <ChoreCard chore={chore}/>
+            <ChoreCardLimited chore={chore}/>
             )) : null } 
         </div>
     )
