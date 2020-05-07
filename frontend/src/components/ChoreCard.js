@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 const ChoreCard = (props) => {
 
-    console.log(props)
     return(
         <div>
             <h4>{props.chore.name}</h4>

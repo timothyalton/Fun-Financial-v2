@@ -49,6 +49,9 @@ const Login = (props)=> {
             localStorage.token = user.token
             localStorage.role = user.role
             localStorage.familyId = user.familyId
+            localStorage.userId = user.userId
+            localStorage.walletId = user.wallet
+            // localStorage.wallet = user.wallet // sends as string that is "object Object" :/ 
         })
     }
 

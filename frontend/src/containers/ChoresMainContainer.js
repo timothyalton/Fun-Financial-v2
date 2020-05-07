@@ -32,7 +32,7 @@ const ChoresMainContainer = () => {
         <div>
             <NavBar />
             {/* Not working!  */}
-            {chores.forEach(c => console.log(c))}
+            {/* {chores.forEach(c => console.log(c))} */}
 
             {results.length > 0 ? results.map(chore => (
             <ChoreCard chore={chore}/>
