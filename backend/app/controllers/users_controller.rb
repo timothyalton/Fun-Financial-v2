@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
-        render json: @users, :include => [:wallet]
+        render json: @users
     end
 
     def create
@@ -58,8 +58,12 @@ class UsersController < ApplicationController
         # byebug
         user = User.find_by(username: params[:username])
 
-        if user && user.authenticate(params[:password])
-            render json: {username: user.username, role: user.role, wallet: user.wallet.id, familyId: user.family_id, userId: user.id, token: encode_token({user_id: user.id})}
+        if user && user.authenticate(params[:password]) && user.role == "child"
+            render json: {username: user.username, role: user.role, wallet: user.wallet.id, familyId: user.family_id, userId: user.id, creditScore: user.credit_score.id, creditLine: user.credit_line.id, token: encode_token({user_id: user.id})}
+        
+        elsif user && user.authenticate(params[:password]) && user.role == "gaurdian"
+            render json: {username: user.username, role: user.role, familyId: user.family_id, userId: user.id, token: encode_token({user_id: user.id})}
+        
         else
             render json: {error: "invalid username or password"}
         end

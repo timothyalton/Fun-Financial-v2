@@ -8,6 +8,8 @@ import Login from './components/Login'
 import MainContainer from './containers/MainContainer'
 import RewardsMainContainer from './containers/RewardsMainContainer'
 import ChoresMainContainer from './containers/ChoresMainContainer'
+import NewRewardForm from './components/NewRewardForm'
+import NewChoreForm from './components/NewChoreForm'
 
 
 
@@ -41,6 +43,8 @@ const App = () => {
           <Route exact path="/signup" render={(routerProps)=> <SignUp {...routerProps}/>} />
           <Route exact path="/rewards" render={(routerProps)=> <RewardsMainContainer {...routerProps}/>} />
           <Route exact path="/chores" render={(routerProps)=> <ChoresMainContainer {...routerProps}/>} />
+          <Route exact path="/newrewardform" render={(routerProps)=> <NewRewardForm {...routerProps}/>} />
+          <Route exact path="/newchoreform" render={(routerProps)=> <NewChoreForm {...routerProps}/>} />
           
 
         </Switch>
