@@ -18,10 +18,6 @@ const SignUp = (props)=> {
     }
 
     const handleChange = (e) =>{
-        // console.log(e.target)
-    //    const {name, value} = e.target
-    //    useEffect(()=>{setLogin({...loginInfo, [name]: value})})
-    //    console.log(setLogin)
     setLogin({...loginInfo, [e.target.name]: e.target.value})
     }
 

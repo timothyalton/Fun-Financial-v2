@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+
+@keyframes short-press {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(.9);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+.newform {
+    width: 60%;
+    display: inline-block;
+    /* text-align: center; */
+}
+
+.submit-button {
+    display: block;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .75em;
+    letter-spacing: 1px;
+    height: 38px;
+    width: 120px;
+    line-height: 38px;
+    overflow: hidden;
+    background: #4dbecf;
+    border-radius: 3px;
+    box-shadow: 0 15px 30px rgba(black,.1);
+    border: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+    }
+
+    .submit-button.hover {
+        box-shadow: 0 5px 15px rgba(black,.1); 
+    }
+
+    .submit-button.focus {
+        box-shadow: 0 5px 15px rgba(black,.1);
+    }
