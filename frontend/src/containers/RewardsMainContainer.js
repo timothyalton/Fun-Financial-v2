@@ -32,7 +32,7 @@ const RewardsMainContainer = () => {
         <div>
             <NavBar />
             {/* Not working!  */}
-            {rewards.forEach(r => console.log(r))}
+            {/* {rewards.forEach(r => console.log(r))} */}
 
             {results.length > 0 ? results.map(reward => (
             <RewardCard reward={reward}/>

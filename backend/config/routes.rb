@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :families
   resources :rewards
   resources :chores
-  resources :credit_line
-  resources :credit_score
-  resources :wallet
+  resources :credit_lines
+  resources :credit_scores
+  resources :wallets
 
   post '/user_signup', to: 'users#signup'
   post '/login', to: 'users#login'
