@@ -62,7 +62,7 @@ class UsersController < ApplicationController
             render json: {username: user.username, role: user.role, wallet: user.wallet.id, familyId: user.family_id, userId: user.id, creditScore: user.credit_score.id, creditLine: user.credit_line.id, token: encode_token({user_id: user.id})}
         
         elsif user && user.authenticate(params[:password]) && user.role == "gaurdian"
-            render json: {username: user.username, role: user.role, familyId: user.family_id, userId: user.id, token: encode_token({user_id: user.id})}
+            render json: {username: user.username, role: user.role, familyId: user.family_id, familyPin: user.family.family_pin, userId: user.id, token: encode_token({user_id: user.id})}
         
         else
             render json: {error: "invalid username or password"}

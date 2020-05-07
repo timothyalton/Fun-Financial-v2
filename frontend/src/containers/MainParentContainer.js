@@ -11,7 +11,6 @@ const MainParentContainer = () => {
     
     return(
         <div>
-            
             <ProfileContainer />
             <RewardsContainer />
         </div>

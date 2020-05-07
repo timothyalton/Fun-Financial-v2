@@ -14,18 +14,55 @@
   }
 }
 
+.auth-bgrnd{
+  position: fixed;
+  width: 600px;
+  height: 400px;
+  background-color: #333;
+  padding: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border-radius: 8px;
+  box-shadow: 6px 6px 12px black;
+  
+  }
 
+  .signup{
+    position: fixed;
+    width: 600px;
+    height: 750px;
+    background-color: #333;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    border-radius: 8px;
+    box-shadow: 6px 6px 12px black;
+    
+    }
+/* 
+.main {
+  width: 100vw;
+} */
 
+/* .newform {
+    width: 60vw;
+    display: block;
+    position: absolute;
+    top: 20;
+    margin: 0 auto;
 
-
-.newform {
-    width: 60%;
-    display: inline-block;
+    /* float: center; */
     /* text-align: center; */
-}
+/* } */ 
 
 .submit-button {
-    display: block;
+    display: flex; 
+    margin: auto;
+    padding-left: 6.5%;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight: 600;
     text-transform: uppercase;
@@ -47,6 +84,16 @@
         box-shadow: 0 5px 15px rgba(black,.1); 
     }
 
-    .submit-button.focus {
+    /* .submit-button.focus {
         box-shadow: 0 5px 15px rgba(black,.1);
+    } */
+
+    .white {
+      color: white;
+      text-align: center;
+    }
+
+    .title {
+      text-align: center;
+      text-shadow: 2px 2px 5px #4dbecf;
     }

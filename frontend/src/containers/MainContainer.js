@@ -6,14 +6,14 @@ import MainParentContainer from  './MainParentContainer'
 import MainChildContainer from  './MainChildContainer'
 import NavBar from '../components/NavBar'
 
-const MainContainer = (props) => {
+const MainContainer = () => {
     
     // const [userInfo, setUser] = useState({})
 
-    const nextPath = (path) => {
-        props.history.push(path);
-        // console.log(props)
-    }
+    // const nextPath = (path) => {
+    //     props.history.push(path);
+    //     // console.log(props)
+    // }
 
 
     const displayMainProfile = () => {
@@ -27,7 +27,7 @@ const MainContainer = (props) => {
     
     return(
         <div>
-        <NavBar props={props}/><br/>
+        <NavBar /><br/>
         {displayMainProfile()}
         </div>
     )

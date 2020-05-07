@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import './form.css'
 
+import NavBar from './NavBar'
+
 const NewRewardForm = (props) => {
 
 
@@ -44,25 +46,28 @@ const NewRewardForm = (props) => {
 
         console.log(rewardInfo)
     return(
-        <div className="newform">
-            <h3>Add New Reward</h3>
+        <div>
+            <NavBar />
+        <div className="auth-bgrnd">
+            <h3 className="white">Add New Reward</h3>
             <Form onSubmit={(e)=>newReward(e)}>
             <Form.Field>
-            <label>Name</label>
+            <label className="white" style={{color: "white"}}>Name</label>
             <input onChange={(e)=>handleChange(e)} name="name" placeholder='enter name of reward' required/>
             </Form.Field>
             <Form.Field>
-            <label>Description</label>
+            <label className="white" style={{color: "white"}}>Description</label>
             <input onChange={(e)=>handleChange(e)} name="description" placeholder='enter description of reward' required/>
             </Form.Field>
             <Form.Field>
-                <label>Price</label>
+                <label className="white" style={{color: "white"}}>Price</label>
                 <input onChange={(e)=>handleChange(e)} name="price" type="number" placeholder='enter cost of reward' required/>
             </Form.Field>
             <Form.Field>
                 <input className="submit-button" type="submit" />
             </Form.Field>
             </Form>
+        </div>
         </div>
     )
 }
