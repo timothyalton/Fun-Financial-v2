@@ -31,7 +31,6 @@ const RewardsMainContainer = () => {
     return(
         <div>
             <NavBar />
-            {/* Not working!  */}
             {/* {rewards.forEach(r => console.log(r))} */}
 
             {results.length > 0 ? results.map(reward => (

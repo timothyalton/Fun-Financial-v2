@@ -51,7 +51,8 @@ const Login = (props)=> {
             localStorage.familyId = user.familyId
             localStorage.userId = user.userId
             localStorage.walletId = user.wallet
-            // localStorage.wallet = user.wallet // sends as string that is "object Object" :/ 
+            localStorage.creditScoreId = user.creditScore
+            localStorage.creditLineId = user.creditLine
         })
     }
 

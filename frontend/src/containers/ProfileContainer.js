@@ -7,6 +7,8 @@ const ProfileContainer = () => {
 
     const [userInfo, setUser] = useState([])
     const [wallet, setWallet] = useState([])
+    const [creditScore, setScore] = useState([])
+    const [creditLine, setCreditLine] = useState([])
 
 
     const getUserInfo = () => {
@@ -24,13 +26,20 @@ const ProfileContainer = () => {
         };
          
         useEffect(() => {
-            getUserInfo() 
-            getWalletInfo()
+            if(localStorage.role === "gaurdian") {
+                getUserInfo();
+            }
+            else { 
+                getUserInfo()
+                getWalletInfo()
+                getCreditScoreInfo()
+                getCreditLineInfo()
+            }
         }, 
         [])
 
         const user = userInfo ? userInfo.find(user => user.id == localStorage.userId) : null
-        // console.log(user)
+        // console.log(userInfo)
 
         const getWalletInfo = () => {
             fetch(`http://localhost:3000/wallets/${localStorage.walletId}`, {
@@ -41,8 +50,36 @@ const ProfileContainer = () => {
         })
         .then(resp => resp.json())
         .then(wallet => {
-            console.log(wallet)
+            // console.log(wallet)
             setWallet(wallet)
+        })
+        }
+
+        const getCreditScoreInfo = () => {
+            fetch(`http://localhost:3000/credit_scores/${localStorage.creditScoreId}`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.token}`
+          }
+        })
+        .then(resp => resp.json())
+        .then(score => {
+            // console.log(score)
+            setScore(score)
+        })
+        }
+
+        const getCreditLineInfo = () => {
+            fetch(`http://localhost:3000/credit_lines/${localStorage.creditLineId}`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.token}`
+          }
+        })
+        .then(resp => resp.json())
+        .then(credit => {
+            console.log(credit)
+            setCreditLine(credit)
         })
         }
 
@@ -59,10 +96,10 @@ const ProfileContainer = () => {
             {localStorage.role === "child" ? <p>${wallet.amount}</p> : null}
 
             {localStorage.role === "child" ? <h5>Credit Line:</h5> : null}
-            {localStorage.role === "child" ? <p>0/</p> : null}
+            {localStorage.role === "child" ? <p>0/{creditLine.amount}</p> : null}
 
             {localStorage.role === "child" ? <h5>Credit Score:</h5> : null}
-            {localStorage.role === "child" ? <p>score</p> : null}
+            {localStorage.role === "child" ? <p>{creditScore.score}</p> : null}
 
         </div>
     )
