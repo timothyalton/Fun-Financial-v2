@@ -139,7 +139,12 @@ const ProfileContainer = () => {
               <span className='date'>Account: Child</span>
             </Card.Meta>
             <Card.Description>
-              Child Account Learning to manage credit
+              <label><strong>Credit Score:</strong></label>
+              <p>{creditScore.score}</p>
+              <label><strong>Credit Usage:</strong></label>
+              <p>$0 / ${creditLine.amount}</p>
+              <label><strong>Wallet:</strong></label>
+              <p>${wallet.amount}</p>
             </Card.Description>
              </Card.Content>
         <Card.Content extra>

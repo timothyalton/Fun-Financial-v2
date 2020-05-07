@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar'
 import { NavLink } from 'react-router-dom'
 
 import RewardCard from '../components/RewardCard'
+import RewardCardLimited from '../components/RewardCardLimited'
 
 
 const RewardsMainContainer = () => {
@@ -34,7 +35,7 @@ const RewardsMainContainer = () => {
             {/* {rewards.forEach(r => console.log(r))} */}
 
             {results.length > 0 ? results.map(reward => (
-            <RewardCard reward={reward}/>
+            <RewardCardLimited reward={reward}/>
             )) : null } 
         </div>
     )

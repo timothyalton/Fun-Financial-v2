@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Card, Image } from 'semantic-ui-react'
-import './rclimited.css'
+import './cclimited.css'
 
 
-const RewardCardLimited = (props) => {
+const ChoreCardLimited = (props) => {
 
-    if(localStorage.role === "gaurdian") { return(
+    if(localStorage.role === "gaurdian") { 
+        return(
         <div className="container">
             {/* <h4>{props.reward.name}</h4>
             <p>{props.reward.description}</p>
@@ -15,13 +16,13 @@ const RewardCardLimited = (props) => {
         <Image
           floated='right'
           size='mini'
-          src='./reward.png'
+          src='./chore.png'
         />
-        <Card.Header>{props.reward.name}</Card.Header>
-        <Card.Meta>${props.reward.price}</Card.Meta>
-        <Card.Description>
+        <Card.Header>{props.chore.name}</Card.Header>
+        <Card.Meta>${props.chore.pay}</Card.Meta>
+        {/* <Card.Description>
           {props.reward.description}
-        </Card.Description>
+        </Card.Description> */}
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
@@ -34,11 +35,10 @@ const RewardCardLimited = (props) => {
         </div>
       </Card.Content>
     </Card>
-        </div>)}
-        else{
-            return(
-            
-                        <div className="container">
+        </div>
+    )} else {
+        return(
+            <div className="container">
             {/* <h4>{props.reward.name}</h4>
             <p>{props.reward.description}</p>
             <p>${props.reward.price}</p> */}
@@ -47,18 +47,18 @@ const RewardCardLimited = (props) => {
         <Image
           floated='right'
           size='mini'
-          src='./reward.png'
+          src='./chore.png'
         />
-        <Card.Header>{props.reward.name}</Card.Header>
-        <Card.Meta>${props.reward.price}</Card.Meta>
-        <Card.Description>
+        <Card.Header>{props.chore.name}</Card.Header>
+        <Card.Meta>${props.chore.pay}</Card.Meta>
+        {/* <Card.Description>
           {props.reward.description}
-        </Card.Description>
+        </Card.Description> */}
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
           <Button basic color='green'>
-            Purchase
+            Acquire Job
           </Button>
           {/* <Button basic color='red'>
             Remove
@@ -66,11 +66,10 @@ const RewardCardLimited = (props) => {
         </div>
       </Card.Content>
     </Card>
-                </div>
-            )
-        }
-    
+        </div>  
+        )
+    }
 }
 
-export default RewardCardLimited;
+export default ChoreCardLimited;
 
