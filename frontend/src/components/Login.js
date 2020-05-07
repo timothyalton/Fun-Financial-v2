@@ -2,6 +2,12 @@ import React, {useState} from 'react';
 import { render } from 'react-dom';
 import {withRouter} from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
+import { Button, Checkbox, Form } from 'semantic-ui-react'
+import './form.css'
+
+
+import NavBar from './NavBar'
+
 
 
 
@@ -49,6 +55,7 @@ const Login = (props)=> {
             localStorage.token = user.token
             localStorage.role = user.role
             localStorage.familyId = user.familyId
+            localStorage.familyPin = user.familyPin
             localStorage.userId = user.userId
             localStorage.walletId = user.wallet
             localStorage.creditScoreId = user.creditScore
@@ -58,9 +65,12 @@ const Login = (props)=> {
 
 
     return(
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={(e)=>{handleSubmit(e); clickLogin('/profile')}}>
+        <div className="main">
+            <NavBar props={props}/>
+            <h2 className="title">Fun Financial</h2>
+        <div className="auth-bgrnd">
+            <h2 className="white">Login</h2>
+            {/* <form onSubmit={(e)=>{handleSubmit(e); clickLogin('/profile')}}>
                 <label>User Name</label>
                 <input onChange={(e) => handleChange(e)} name="username" type="text" required />
                 <br/>
@@ -69,9 +79,27 @@ const Login = (props)=> {
                 <br/>
                 <input type="submit" value="Login" />
             </form>
-            <button onClick={()=> clickSignup('/signup')}>Sign Up</button>
+            <button onClick={()=> clickSignup('/signup')}>Sign Up</button> */}
+        <Form onSubmit={(e)=>{handleSubmit(e); clickLogin('/profile')}}>
+            <Form.Field>
+            <label className="white" style={{color: "white"}}>User Name</label>
+            <input onChange={(e)=>handleChange(e)} name="username" placeholder='username' required/>
+            </Form.Field>
+            <Form.Field>
+            <label className="white" style={{color: "white"}}>Password</label>
+            <input onChange={(e)=>handleChange(e)} name="password" type="password" placeholder='password' required/>
+            </Form.Field>
+            <Form.Field>
+                <input className="submit-button" type="submit" value="Login"/>
+            </Form.Field>
+        </Form><br/>
+        <button className="submit-button"onClick={()=> clickSignup('/signup')}>Sign Up</button>
+
+        </div>
         </div>
     )
 }
 
 export default Login;
+
+      

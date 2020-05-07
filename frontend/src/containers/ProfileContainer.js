@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { Card, Icon, Image } from 'semantic-ui-react'
+import './profile.css'
 
 
 
@@ -86,11 +88,12 @@ const ProfileContainer = () => {
         
 
 
-    return(
-        <div>
-            <h4>{user ? user.firstname : null} {user ? user.lastname : null}</h4>
+    if(localStorage.role === "gaurdian"){return(
+        <div className="profile">
+            {/* <h4>{user ? user.firstname : null} {user ? user.lastname : null}</h4>
             <p>{user ? user.email : null}</p>
             <p>{user ? user.username : null}</p>
+            {localStorage.role === "gaurdian" ? <p>Family PIN: {localStorage.familyPin}</p> : null}
             
             {localStorage.role === "child" ? <h5>Wallet:</h5> : null}
             {localStorage.role === "child" ? <p>${wallet.amount}</p> : null}
@@ -99,10 +102,58 @@ const ProfileContainer = () => {
             {localStorage.role === "child" ? <p>0/{creditLine.amount}</p> : null}
 
             {localStorage.role === "child" ? <h5>Credit Score:</h5> : null}
-            {localStorage.role === "child" ? <p>{creditScore.score}</p> : null}
+            {localStorage.role === "child" ? <p>{creditScore.score}</p> : null} */}
+            <Card>
+            <Image src='/default.png' wrapped ui={false} />
+             <Card.Content>
+             <Card.Header>{user ? user.firstname : null} {user ? user.lastname : null}</Card.Header>
+            <Card.Meta>
+              <span className='date'>Username: {user ? user.username : null}</span><br/>
+              <span className='date'>Email: {user ? user.email : null}</span><br/>
+              <span className='date'>Account: Parent</span>
+            </Card.Meta>
+            <Card.Description>
+              family PIN: {localStorage.familyPin}
+            </Card.Description>
+             </Card.Content>
+        <Card.Content extra>
+          <a>
+            <Icon name='user' />
+            5 Family
+          </a>
+        </Card.Content>
+      </Card> 
 
         </div>
-    )
+    )}
+    else{ 
+      return(
+        <div className="profile">
+      <Card>
+            <Image src='/default.png' wrapped ui={false} />
+             <Card.Content>
+             <Card.Header>{user ? user.firstname : null} {user ? user.lastname : null}</Card.Header>
+            <Card.Meta>
+              <span className='date'>Username: {user ? user.username : null}</span><br/>
+              <span className='date'>Email: {user ? user.email : null}</span><br/>
+              <span className='date'>Account: Child</span>
+            </Card.Meta>
+            <Card.Description>
+              Child Account Learning to manage credit
+            </Card.Description>
+             </Card.Content>
+        <Card.Content extra>
+          <a>
+            <Icon name='user' />
+            5 Family
+          </a>
+        </Card.Content>
+      </Card>
+      </div>
+      )}
 }
 
 export default ProfileContainer;
+
+
+   

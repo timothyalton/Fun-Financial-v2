@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from '../components/NavBar'
 import { NavLink } from 'react-router-dom'
+import './rewardcontainer.css'
 
 import RewardCardLimited from '../components/RewardCardLimited'
 
@@ -30,9 +31,8 @@ const RewardsContainer = () => {
 
     console.log(results)
     return(
-        <div>
-            <button><NavLink to="/rewards">See Rewards</NavLink></button>
-            <button><NavLink to="/chores">See Chores</NavLink></button><br/>
+        <div className="container">
+            <button className="button"><NavLink to="/newrewardform">Add Reward</NavLink></button><br/>
              {results.length > 0 ? results.slice(0,3).map(reward => (
             <RewardCardLimited reward={reward}/>
             )) : null } 

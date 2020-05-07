@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { Button, Checkbox, Form } from 'semantic-ui-react'
 import './form.css'
 
+import NavBar from './NavBar'
+
 
 const NewChoreForm = (props) => {
 
@@ -41,21 +43,24 @@ const NewChoreForm = (props) => {
     }
 
     return(
-        <div className="newform">
-            <h3>Add New Chore</h3>
+        <div>
+            <NavBar />
+        <div className="auth-bgrnd">
+            <h3 className="white">Add New Chore</h3>
             <Form onSubmit={(e)=>newChore(e)}>
             <Form.Field>
-            <label>Name</label>
+            <label className="white" style={{color: "white"}}>Name</label>
             <input onChange={(e)=>handleChange(e)} name="name" placeholder='enter name of chore' required/>
             </Form.Field>
             <Form.Field>
-            <label>Pay Out</label>
+            <label className="white" style={{color: "white"}}>Pay Out</label>
             <input onChange={(e)=>handleChange(e)} name="pay" type="number" placeholder='enter pay of chore' required/>
             </Form.Field>
             <Form.Field>
                 <input className="submit-button" type="submit" />
             </Form.Field>
             </Form>
+        </div>
         </div>
     )
 }
